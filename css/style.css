@@ -638,6 +638,9 @@ form{
    text-align: center;
  }
 
+ #ftl1{
+   margin-top: 25vh;
+ }
 
  .brainh{
    color:green;
@@ -655,6 +658,7 @@ form{
 
  #whatseternal{
    color:red;
+   margin-top: 25vh;
  }
 
 #et1{
@@ -672,6 +676,7 @@ form{
 
  #celestialb{
    color:red;
+   margin-top: 25vh;
  }
 
 .vcenter{
