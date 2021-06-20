@@ -1,0 +1,2305 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&family=Oxanium&family=Staatliches&family=VT323&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #000;
+    height: 100vh 100vw;
+    --nav-load-time: 400ms;
+    --nav-link-load-time: 500ms;
+}
+
+
+/* h1{
+    color:#fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 40vh;
+    text-shadow: 0 0 10px rgba(255,255,255, -35);
+    z-index: 999;
+} */
+
+
+
+#bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* z-index: -1; */
+}
+  
+#maindiv{
+    /* position: ; */
+    /* height: 100vh;
+    width: 100vw; */
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* background: #fff; */
+}
+
+#maindiv ul {
+    list-style-type: none;
+    /* background: #1155cb; */
+    padding: 30px 80px 40px 90px;
+    border-radius: 5px;
+    box-shadow: 0 40px 30px -20px rgba(0, 0, 0, 0.25);
+  }
+#maindiv ul li {
+    text-align: left;
+    position: relative;
+  }
+#maindiv ul li:hover:after {
+    box-shadow: 0 0 0 1px red, 0 0 0 3px #e0ff00;
+  }
+#maindiv ul li:after {
+    content: "";
+    position: absolute;
+    width: 7.5px;
+    height: 7.5px;
+    background: red;
+    border-radius: 100%;
+    left: -25px;
+    top: 50%;
+    transform: translate(0, -50%);
+    box-shadow: 0 0 0 0 green, 0 0 0 0 white;
+    transition: 0.4s ease-in-out;
+  }
+
+  #maindiv a {
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 20px 0;
+    position: relative;
+    color: #fff;
+    font-family: "VT323";
+    text-decoration: none;
+    font-size: 30px;
+    z-index: 2;
+    transition: 0.2s ease-in-out;
+  }
+  #maindiv a:hover {
+    /* color: #c2ff00; */
+    color: red;
+    font-size: 2em;
+}
+  #maindiv a:hover:before {
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:%23e0ff00; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/80px 80px repeat-x;
+    -webkit-animation: waving 3s linear infinite;
+            animation: waving 3s linear infinite;
+    transform: scaleX(1);
+  }
+  @-webkit-keyframes waving {
+    to {
+      background-position: 80px 50%, 160px 50%;
+    }
+  }
+  @keyframes waving {
+    to {
+      background-position: 80px 50%, 160px 50%;
+    }
+  }
+  #maindiv a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    bottom: -45px;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
+    transform-origin: right;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B stroke:%23e0ff00; stroke-width:2; stroke-linecap:square; %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 40 40 40 Q 60 40 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/80px 80px repeat-x;
+  }
+  /* #mdiv ul li:nth-of-type(2) a:before {
+    bottom: -50px;
+    transform-origin: left;
+  } */
+  /* #mdiv ul li:nth-of-type(2) a:hover:before {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 2s cubic-bezier(0.175, 0.885, 0.32, 1) infinite; animation-delay:-0.25s; stroke:%23e0ff00; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B 25%25%7B d:path('M 0 20 L 10 15 L 20 20 L 30 25 L 40 20 ');%0A%7D%0A50%25%7B%0Ad:path('M 0 20 L 10 25 L 20 20 L 30 15 L 40 20  ');%0A%7D%0A75%25%7B%0Ad:path('M 0 20 L 10 15 L 20 20 L 30 25 L 40 20 ');%0A%7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 20 L 10 25 L 20 20 L 30 15 L 40 20' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/40px 40px repeat-x;
+    animation: waving 6s linear infinite reverse;
+    transform-origin: right;
+  }
+  #mdiv ul li:nth-of-type(3) a:before {
+    transform-origin: right;
+    width: calc(100% + 25px);
+  }
+  #mdiv ul li:nth-of-type(3) a:hover:before {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 2s linear infinite; animation-delay:0s; stroke:%23e0ff00; stroke-width:2; stroke-dashoffset:0px; stroke-dasharray:80px; stroke-linecap:round; fill:%231155cb; %7D @keyframes wave%7B 25%25%7B stroke-dashoffset:-80px; %7D 50%25%7B stroke-dashoffset:-80px; %7D 100%25%7B stroke-dashoffset:-160px; %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath class='wave' d='M 0 40 L 50 40 L 80 40 L 54 44 L 54 36 L 80 40 ' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") calc(100% - 10px) 50%/40px 80px no-repeat, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B stroke:%23e0ff00; stroke-width:2; stroke-linecap:round; %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 40 40 40 Q 60 40 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/calc(100% - 25px) 80px no-repeat;
+    -webkit-animation: none;
+            animation: none;
+    transform-origin: left;
+  } */
+  #maindiv a {
+    display: inline-block;
+    margin: 20px 0;
+    position: relative;
+    color: #fff;
+    font-family: "VT323";
+    text-decoration: none;
+    font-size: 30px;
+    z-index: 2;
+    transition: 0.2s ease-in-out;
+  }
+  #maindiv a:hover {
+    /* color: #c2ff00; */
+    color: red;
+    font-size: 2em;
+}
+  #maindiv a:hover:before {
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B animation:wave 1s ease-in-out infinite alternate; animation-delay:-0.25s; stroke:%23e0ff00; stroke-width:2; stroke-linecap:square; %7D @keyframes wave%7B to%7B d:path('M 0 40 Q 20 42.5 40 40 Q 60 37.5 80 40'); %7D %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 37.5 40 40 Q 60 42.5 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/80px 80px repeat-x;
+    -webkit-animation: waving 3s linear infinite;
+            animation: waving 3s linear infinite;
+    transform: scaleX(1);
+  }
+  @-webkit-keyframes waving {
+    to {
+      background-position: 80px 50%, 160px 50%;
+    }
+  }
+  @keyframes waving {
+    to {
+      background-position: 80px 50%, 160px 50%;
+    }
+  }
+  #maindiv a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    bottom: -45px;
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1);
+    transform-origin: right;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200%25' height='100%25'%3E%3Cdefs%3E%3Cstyle%3E .wave%7B stroke:%23e0ff00; stroke-width:2; stroke-linecap:square; %7D %3C/style%3E%3C/defs%3E%3Cpattern id='wavePattern' x='0' y='0' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath fill='none' class='wave' d='M 0 40 Q 20 40 40 40 Q 60 40 80 40' /%3E%3C/pattern%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23wavePattern)'%3E%3C/rect%3E%3C/svg%3E") 0px 50%/80px 80px repeat-x;
+  }
+
+    * {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  
+@-webkit-keyframes typed {
+  /* string 1, char 1 */
+  0%, 0.3079143866% {
+    content: '"';
+  }
+  /* string 1, char 2 */
+  0.3089143866%, 0.6168287732% {
+    content: '"S';
+  }
+  /* string 1, char 3 */
+  0.6178287732%, 0.9257431598% {
+    content: '"So';
+  }
+  /* string 1, char 4 */
+  0.9267431598%, 1.2346575463% {
+    content: '"Som';
+  }
+  /* string 1, char 5 */
+  1.2356575463%, 1.5435719329% {
+    content: '"Some';
+  }
+  /* string 1, char 6 */
+  1.5445719329%, 1.8524863195% {
+    content: '"Somew';
+  }
+  /* string 1, char 7 */
+  1.8534863195%, 2.1614007061% {
+    content: '"Somewh';
+  }
+  /* string 1, char 8 */
+  2.1624007061%, 2.4703150927% {
+    content: '"Somewhe';
+  }
+  /* string 1, char 9 */
+  2.4713150927%, 2.7792294793% {
+    content: '"Somewher';
+  }
+  /* string 1, char 10 */
+  2.7802294793%, 3.0881438658% {
+    content: '"Somewhere';
+  }
+  /* string 1, char 11 */
+  3.0891438658%, 3.3970582524% {
+    content: '"Somewhere,';
+  }
+  /* string 1, char 12 */
+  3.3980582524%, 3.705972639% {
+    content: '"Somewhere, ';
+  }
+  /* string 1, char 13 */
+  3.706972639%, 4.0148870256% {
+    content: '"Somewhere, s';
+  }
+  /* string 1, char 14 */
+  4.0158870256%, 4.3238014122% {
+    content: '"Somewhere, so';
+  }
+  /* string 1, char 15 */
+  4.3248014122%, 4.6327157988% {
+    content: '"Somewhere, som';
+  }
+  /* string 1, char 16 */
+  4.6337157988%, 4.9416301853% {
+    content: '"Somewhere, some';
+  }
+  /* string 1, char 17 */
+  4.9426301853%, 5.2505445719% {
+    content: '"Somewhere, somet';
+  }
+  /* string 1, char 18 */
+  5.2515445719%, 5.5594589585% {
+    content: '"Somewhere, someth';
+  }
+  /* string 1, char 19 */
+  5.5604589585%, 5.8683733451% {
+    content: '"Somewhere, somethi';
+  }
+  /* string 1, char 20 */
+  5.8693733451%, 6.1772877317% {
+    content: '"Somewhere, somethin';
+  }
+  /* string 1, char 21 */
+  6.1782877317%, 6.4862021183% {
+    content: '"Somewhere, something';
+  }
+  /* string 1, char 22 */
+  6.4872021183%, 6.7951165049% {
+    content: '"Somewhere, something ';
+  }
+  /* string 1, char 23 */
+  6.7961165049%, 7.1040308914% {
+    content: '"Somewhere, something i';
+  }
+  /* string 1, char 24 */
+  7.1050308914%, 7.412945278% {
+    content: '"Somewhere, something in';
+  }
+  /* string 1, char 25 */
+  7.413945278%, 7.7218596646% {
+    content: '"Somewhere, something inc';
+  }
+  /* string 1, char 26 */
+  7.7228596646%, 8.0307740512% {
+    content: '"Somewhere, something incr';
+  }
+  /* string 1, char 27 */
+  8.0317740512%, 8.3396884378% {
+    content: '"Somewhere, something incre';
+  }
+  /* string 1, char 28 */
+  8.3406884378%, 8.6486028244% {
+    content: '"Somewhere, something incred';
+  }
+  /* string 1, char 29 */
+  8.6496028244%, 8.9575172109% {
+    content: '"Somewhere, something incredi';
+  }
+  /* string 1, char 30 */
+  8.9585172109%, 9.2664315975% {
+    content: '"Somewhere, something incredib';
+  }
+  /* string 1, char 31 */
+  9.2674315975%, 9.5753459841% {
+    content: '"Somewhere, something incredibl';
+  }
+  /* string 1, char 32 */
+  9.5763459841%, 9.8842603707% {
+    content: '"Somewhere, something incredible';
+  }
+  /* string 1, char 33 */
+  9.8852603707%, 10.1931747573% {
+    content: '"Somewhere, something incredible ';
+  }
+  /* string 1, char 34 */
+  10.1941747573%, 10.5020891439% {
+    content: '"Somewhere, something incredible i';
+  }
+  /* string 1, char 35 */
+  10.5030891439%, 10.8110035305% {
+    content: '"Somewhere, something incredible is';
+  }
+  /* string 1, char 36 */
+  10.8120035305%, 11.119917917% {
+    content: '"Somewhere, something incredible is ';
+  }
+  /* string 1, char 37 */
+  11.120917917%, 11.4288323036% {
+    content: '"Somewhere, something incredible is w';
+  }
+  /* string 1, char 38 */
+  11.4298323036%, 11.7377466902% {
+    content: '"Somewhere, something incredible is wa';
+  }
+  /* string 1, char 39 */
+  11.7387466902%, 12.0466610768% {
+    content: '"Somewhere, something incredible is wai';
+  }
+  /* string 1, char 40 */
+  12.0476610768%, 12.3555754634% {
+    content: '"Somewhere, something incredible is wait';
+  }
+  /* string 1, char 41 */
+  12.3565754634%, 12.66448985% {
+    content: '"Somewhere, something incredible is waiti';
+  }
+  /* string 1, char 42 */
+  12.66548985%, 12.9734042365% {
+    content: '"Somewhere, something incredible is waitin';
+  }
+  /* string 1, char 43 */
+  12.9744042365%, 13.2823186231% {
+    content: '"Somewhere, something incredible is waiting';
+  }
+  /* string 1, char 44 */
+  13.2833186231%, 13.5912330097% {
+    content: '"Somewhere, something incredible is waiting ';
+  }
+  /* string 1, char 45 */
+  13.5922330097%, 13.9001473963% {
+    content: '"Somewhere, something incredible is waiting t';
+  }
+  /* string 1, char 46 */
+  13.9011473963%, 14.2090617829% {
+    content: '"Somewhere, something incredible is waiting to';
+  }
+  /* string 1, char 47 */
+  14.2100617829%, 14.5179761695% {
+    content: '"Somewhere, something incredible is waiting to ';
+  }
+  /* string 1, char 48 */
+  14.5189761695%, 14.826890556% {
+    content: '"Somewhere, something incredible is waiting to b';
+  }
+  /* string 1, char 49 */
+  14.827890556%, 15.1358049426% {
+    content: '"Somewhere, something incredible is waiting to be';
+  }
+  /* string 1, char 50 */
+  15.1368049426%, 15.4447193292% {
+    content: '"Somewhere, something incredible is waiting to be ';
+  }
+  /* string 1, char 51 */
+  15.4457193292%, 15.7536337158% {
+    content: '"Somewhere, something incredible is waiting to be k';
+  }
+  /* string 1, char 52 */
+  15.7546337158%, 16.0625481024% {
+    content: '"Somewhere, something incredible is waiting to be kn';
+  }
+  /* string 1, char 53 */
+  16.0635481024%, 16.371462489% {
+    content: '"Somewhere, something incredible is waiting to be kno';
+  }
+  /* string 1, char 54 */
+  16.372462489%, 16.6803768756% {
+    content: '"Somewhere, something incredible is waiting to be know';
+  }
+  /* string 1, char 55 */
+  16.6813768756%, 16.9892912621% {
+    content: '"Somewhere, something incredible is waiting to be known';
+  }
+  /* string 1, char 56 */
+  16.9902912621%, 17.2982056487% {
+    content: '"Somewhere, something incredible is waiting to be known.';
+  }
+  /* string 1, char 57 */
+  17.2992056487%, 17.6071200353% {
+    content: '"Somewhere, something incredible is waiting to be known."';
+  }
+  /* string 1, char 58 */
+  17.6081200353%, 17.9160344219% {
+    content: '"Somewhere, something incredible is waiting to be known." ';
+  }
+  /* string 1, char 59 */
+  17.9170344219%, 18.2249488085% {
+    content: '"Somewhere, something incredible is waiting to be known." -';
+  }
+  /* string 1, char 60 */
+  18.2259488085%, 18.5338631951% {
+    content: '"Somewhere, something incredible is waiting to be known." - ';
+  }
+  /* string 1, char 61 */
+  18.5348631951%, 18.8427775816% {
+    content: '"Somewhere, something incredible is waiting to be known." - C';
+  }
+  /* string 1, char 62 */
+  18.8437775816%, 19.1516919682% {
+    content: '"Somewhere, something incredible is waiting to be known." - Ca';
+  }
+  /* string 1, char 63 */
+  19.1526919682%, 19.4606063548% {
+    content: '"Somewhere, something incredible is waiting to be known." - Car';
+  }
+  /* string 1, char 64 */
+  19.4616063548%, 19.7695207414% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl';
+  }
+  /* string 1, char 65 */
+  19.7705207414%, 20.078435128% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl ';
+  }
+  /* string 1, char 66 */
+  20.079435128%, 20.3873495146% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl S';
+  }
+  /* string 1, char 67 */
+  20.3883495146%, 20.6962639011% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sa';
+  }
+  /* string 1, char 68 */
+  20.6972639011%, 21.0051782877% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sag';
+  }
+  /* string 1, char 69 */
+  21.0061782877%, 21.3140926743% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Saga';
+  }
+  /* string 1, char 70 */
+  21.3150926743%, 26.344984113% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sagan';
+  }
+  /* string 1, char 71 */
+  26.345984113%, 26.6538984996% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Saga';
+  }
+  /* string 1, char 72 */
+  26.6548984996%, 26.9628128861% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sag';
+  }
+  /* string 1, char 73 */
+  26.9638128861%, 27.2717272727% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sa';
+  }
+  /* string 1, char 74 */
+  27.2727272727%, 27.5806416593% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl S';
+  }
+  /* string 1, char 75 */
+  27.5816416593%, 27.8895560459% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl ';
+  }
+  /* string 1, char 76 */
+  27.8905560459%, 28.1984704325% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl';
+  }
+  /* string 1, char 77 */
+  28.1994704325%, 28.5073848191% {
+    content: '"Somewhere, something incredible is waiting to be known." - Car';
+  }
+  /* string 1, char 78 */
+  28.5083848191%, 28.8162992056% {
+    content: '"Somewhere, something incredible is waiting to be known." - Ca';
+  }
+  /* string 1, char 79 */
+  28.8172992056%, 29.1252135922% {
+    content: '"Somewhere, something incredible is waiting to be known." - C';
+  }
+  /* string 1, char 80 */
+  29.1262135922%, 29.4341279788% {
+    content: '"Somewhere, something incredible is waiting to be known." - ';
+  }
+  /* string 1, char 81 */
+  29.4351279788%, 29.7430423654% {
+    content: '"Somewhere, something incredible is waiting to be known." -';
+  }
+  /* string 1, char 82 */
+  29.7440423654%, 30.051956752% {
+    content: '"Somewhere, something incredible is waiting to be known." ';
+  }
+  /* string 1, char 83 */
+  30.052956752%, 30.3608711386% {
+    content: '"Somewhere, something incredible is waiting to be known."';
+  }
+  /* string 1, char 84 */
+  30.3618711386%, 30.6697855252% {
+    content: '"Somewhere, something incredible is waiting to be known.';
+  }
+  /* string 1, char 85 */
+  30.6707855252%, 30.9786999117% {
+    content: '"Somewhere, something incredible is waiting to be known';
+  }
+  /* string 1, char 86 */
+  30.9796999117%, 31.2876142983% {
+    content: '"Somewhere, something incredible is waiting to be know';
+  }
+  /* string 1, char 87 */
+  31.2886142983%, 31.5965286849% {
+    content: '"Somewhere, something incredible is waiting to be kno';
+  }
+  /* string 1, char 88 */
+  31.5975286849%, 31.9054430715% {
+    content: '"Somewhere, something incredible is waiting to be kn';
+  }
+  /* string 1, char 89 */
+  31.9064430715%, 32.2143574581% {
+    content: '"Somewhere, something incredible is waiting to be k';
+  }
+  /* string 1, char 90 */
+  32.2153574581%, 32.5232718447% {
+    content: '"Somewhere, something incredible is waiting to be ';
+  }
+  /* string 1, char 91 */
+  32.5242718447%, 32.8321862312% {
+    content: '"Somewhere, something incredible is waiting to be';
+  }
+  /* string 1, char 92 */
+  32.8331862312%, 33.1411006178% {
+    content: '"Somewhere, something incredible is waiting to b';
+  }
+  /* string 1, char 93 */
+  33.1421006178%, 33.4500150044% {
+    content: '"Somewhere, something incredible is waiting to ';
+  }
+  /* string 1, char 94 */
+  33.4510150044%, 33.758929391% {
+    content: '"Somewhere, something incredible is waiting to';
+  }
+  /* string 1, char 95 */
+  33.759929391%, 34.0678437776% {
+    content: '"Somewhere, something incredible is waiting t';
+  }
+  /* string 1, char 96 */
+  34.0688437776%, 34.3767581642% {
+    content: '"Somewhere, something incredible is waiting ';
+  }
+  /* string 1, char 97 */
+  34.3777581642%, 34.6856725508% {
+    content: '"Somewhere, something incredible is waiting';
+  }
+  /* string 1, char 98 */
+  34.6866725508%, 34.9945869373% {
+    content: '"Somewhere, something incredible is waitin';
+  }
+  /* string 1, char 99 */
+  34.9955869373%, 35.3035013239% {
+    content: '"Somewhere, something incredible is waiti';
+  }
+  /* string 1, char 100 */
+  35.3045013239%, 35.6124157105% {
+    content: '"Somewhere, something incredible is wait';
+  }
+  /* string 1, char 101 */
+  35.6134157105%, 35.9213300971% {
+    content: '"Somewhere, something incredible is wai';
+  }
+  /* string 1, char 102 */
+  35.9223300971%, 36.2302444837% {
+    content: '"Somewhere, something incredible is wa';
+  }
+  /* string 1, char 103 */
+  36.2312444837%, 36.5391588703% {
+    content: '"Somewhere, something incredible is w';
+  }
+  /* string 1, char 104 */
+  36.5401588703%, 36.8480732568% {
+    content: '"Somewhere, something incredible is ';
+  }
+  /* string 1, char 105 */
+  36.8490732568%, 37.1569876434% {
+    content: '"Somewhere, something incredible is';
+  }
+  /* string 1, char 106 */
+  37.1579876434%, 37.46590203% {
+    content: '"Somewhere, something incredible i';
+  }
+  /* string 1, char 107 */
+  37.46690203%, 37.7748164166% {
+    content: '"Somewhere, something incredible ';
+  }
+  /* string 1, char 108 */
+  37.7758164166%, 38.0837308032% {
+    content: '"Somewhere, something incredible';
+  }
+  /* string 1, char 109 */
+  38.0847308032%, 38.3926451898% {
+    content: '"Somewhere, something incredibl';
+  }
+  /* string 1, char 110 */
+  38.3936451898%, 38.7015595763% {
+    content: '"Somewhere, something incredib';
+  }
+  /* string 1, char 111 */
+  38.7025595763%, 39.0104739629% {
+    content: '"Somewhere, something incredi';
+  }
+  /* string 1, char 112 */
+  39.0114739629%, 39.3193883495% {
+    content: '"Somewhere, something incred';
+  }
+  /* string 1, char 113 */
+  39.3203883495%, 39.6283027361% {
+    content: '"Somewhere, something incre';
+  }
+  /* string 1, char 114 */
+  39.6293027361%, 39.9372171227% {
+    content: '"Somewhere, something incr';
+  }
+  /* string 1, char 115 */
+  39.9382171227%, 40.2461315093% {
+    content: '"Somewhere, something inc';
+  }
+  /* string 1, char 116 */
+  40.2471315093%, 40.5550458959% {
+    content: '"Somewhere, something in';
+  }
+  /* string 1, char 117 */
+  40.5560458959%, 40.8639602824% {
+    content: '"Somewhere, something i';
+  }
+  /* string 1, char 118 */
+  40.8649602824%, 41.172874669% {
+    content: '"Somewhere, something ';
+  }
+  /* string 1, char 119 */
+  41.173874669%, 41.4817890556% {
+    content: '"Somewhere, something';
+  }
+  /* string 1, char 120 */
+  41.4827890556%, 41.7907034422% {
+    content: '"Somewhere, somethin';
+  }
+  /* string 1, char 121 */
+  41.7917034422%, 42.0996178288% {
+    content: '"Somewhere, somethi';
+  }
+  /* string 1, char 122 */
+  42.1006178288%, 42.4085322154% {
+    content: '"Somewhere, someth';
+  }
+  /* string 1, char 123 */
+  42.4095322154%, 42.7174466019% {
+    content: '"Somewhere, somet';
+  }
+  /* string 1, char 124 */
+  42.7184466019%, 43.0263609885% {
+    content: '"Somewhere, some';
+  }
+  /* string 1, char 125 */
+  43.0273609885%, 43.3352753751% {
+    content: '"Somewhere, som';
+  }
+  /* string 1, char 126 */
+  43.3362753751%, 43.6441897617% {
+    content: '"Somewhere, so';
+  }
+  /* string 1, char 127 */
+  43.6451897617%, 43.9531041483% {
+    content: '"Somewhere, s';
+  }
+  /* string 1, char 128 */
+  43.9541041483%, 44.2620185349% {
+    content: '"Somewhere, ';
+  }
+  /* string 1, char 129 */
+  44.2630185349%, 44.5709329214% {
+    content: '"Somewhere,';
+  }
+  /* string 1, char 130 */
+  44.5719329214%, 44.879847308% {
+    content: '"Somewhere';
+  }
+  /* string 1, char 131 */
+  44.880847308%, 45.1887616946% {
+    content: '"Somewher';
+  }
+  /* string 1, char 132 */
+  45.1897616946%, 45.4976760812% {
+    content: '"Somewhe';
+  }
+  /* string 1, char 133 */
+  45.4986760812%, 45.8065904678% {
+    content: '"Somewh';
+  }
+  /* string 1, char 134 */
+  45.8075904678%, 46.1155048544% {
+    content: '"Somew';
+  }
+  /* string 1, char 135 */
+  46.1165048544%, 46.424419241% {
+    content: '"Some';
+  }
+  /* string 1, char 136 */
+  46.425419241%, 46.7333336275% {
+    content: '"Som';
+  }
+  /* string 1, char 137 */
+  46.7343336275%, 47.0422480141% {
+    content: '"So';
+  }
+  /* string 1, char 138 */
+  47.0432480141%, 47.3511624007% {
+    content: '"S';
+  }
+  /* string 1, char 139 */
+  47.3521624007%, 47.6600767873% {
+    content: '"';
+  }
+  /* string 1, char 140 */
+  47.6610767873%, 52.0731394528% {
+    content: "​";
+  }
+  /* string 2, char 1 */
+  52.0741394528%, 52.3820538394% {
+    content: "H";
+  }
+  /* string 2, char 2 */
+  52.3830538394%, 52.6909682259% {
+    content: "Hi";
+  }
+  /* string 2, char 3 */
+  52.6919682259%, 52.9998826125% {
+    content: "Hi!";
+  }
+  /* string 2, char 4 */
+  53.0008826125%, 53.3087969991% {
+    content: "Hi! ";
+  }
+  /* string 2, char 5 */
+  53.3097969991%, 53.6177113857% {
+    content: "Hi! I";
+  }
+  /* string 2, char 6 */
+  53.6187113857%, 53.9266257723% {
+    content: "Hi! I ";
+  }
+  /* string 2, char 7 */
+  53.9276257723%, 54.2355401589% {
+    content: "Hi! I a";
+  }
+  /* string 2, char 8 */
+  54.2365401589%, 54.5444545455% {
+    content: "Hi! I am";
+  }
+  /* string 2, char 9 */
+  54.5454545455%, 54.853368932% {
+    content: "Hi! I am ";
+  }
+  /* string 2, char 10 */
+  54.854368932%, 55.1622833186% {
+    content: "Hi! I am A";
+  }
+  /* string 2, char 11 */
+  55.1632833186%, 55.4711977052% {
+    content: "Hi! I am At";
+  }
+  /* string 2, char 12 */
+  55.4721977052%, 55.7801120918% {
+    content: "Hi! I am Ata";
+  }
+  /* string 2, char 13 */
+  55.7811120918%, 56.0890264784% {
+    content: "Hi! I am Atan";
+  }
+  /* string 2, char 14 */
+  56.0900264784%, 56.397940865% {
+    content: "Hi! I am Atan ";
+  }
+  /* string 2, char 15 */
+  56.398940865%, 56.7068552515% {
+    content: "Hi! I am Atan B";
+  }
+  /* string 2, char 16 */
+  56.7078552515%, 57.0157696381% {
+    content: "Hi! I am Atan Bh";
+  }
+  /* string 2, char 17 */
+  57.0167696381%, 57.3246840247% {
+    content: "Hi! I am Atan Bha";
+  }
+  /* string 2, char 18 */
+  57.3256840247%, 57.6335984113% {
+    content: "Hi! I am Atan Bhar";
+  }
+  /* string 2, char 19 */
+  57.6345984113%, 57.9425127979% {
+    content: "Hi! I am Atan Bhard";
+  }
+  /* string 2, char 20 */
+  57.9435127979%, 58.2514271845% {
+    content: "Hi! I am Atan Bhardw";
+  }
+  /* string 2, char 21 */
+  58.2524271845%, 58.5603415711% {
+    content: "Hi! I am Atan Bhardwa";
+  }
+  /* string 2, char 22 */
+  58.5613415711%, 63.5912330097% {
+    content: "Hi! I am Atan Bhardwaj";
+  }
+  /* string 2, char 23 */
+  63.5922330097%, 63.9001473963% {
+    content: "Hi! I am Atan Bhardwa";
+  }
+  /* string 2, char 24 */
+  63.9011473963%, 64.2090617829% {
+    content: "Hi! I am Atan Bhardw";
+  }
+  /* string 2, char 25 */
+  64.2100617829%, 64.5179761695% {
+    content: "Hi! I am Atan Bhard";
+  }
+  /* string 2, char 26 */
+  64.5189761695%, 64.826890556% {
+    content: "Hi! I am Atan Bhar";
+  }
+  /* string 2, char 27 */
+  64.827890556%, 65.1358049426% {
+    content: "Hi! I am Atan Bha";
+  }
+  /* string 2, char 28 */
+  65.1368049426%, 65.4447193292% {
+    content: "Hi! I am Atan Bh";
+  }
+  /* string 2, char 29 */
+  65.4457193292%, 65.7536337158% {
+    content: "Hi! I am Atan B";
+  }
+  /* string 2, char 30 */
+  65.7546337158%, 66.0625481024% {
+    content: "Hi! I am Atan ";
+  }
+  /* string 2, char 31 */
+  66.0635481024%, 66.371462489% {
+    content: "Hi! I am Atan";
+  }
+  /* string 2, char 32 */
+  66.372462489%, 66.6803768756% {
+    content: "Hi! I am Ata";
+  }
+  /* string 2, char 33 */
+  66.6813768756%, 66.9892912621% {
+    content: "Hi! I am At";
+  }
+  /* string 2, char 34 */
+  66.9902912621%, 67.2982056487% {
+    content: "Hi! I am A";
+  }
+  /* string 2, char 35 */
+  67.2992056487%, 67.6071200353% {
+    content: "Hi! I am ";
+  }
+  /* string 2, char 36 */
+  67.6081200353%, 67.9160344219% {
+    content: "Hi! I am";
+  }
+  /* string 2, char 37 */
+  67.9170344219%, 68.2249488085% {
+    content: "Hi! I a";
+  }
+  /* string 2, char 38 */
+  68.2259488085%, 68.5338631951% {
+    content: "Hi! I ";
+  }
+  /* string 2, char 39 */
+  68.5348631951%, 68.8427775816% {
+    content: "Hi! I";
+  }
+  /* string 2, char 40 */
+  68.8437775816%, 69.1516919682% {
+    content: "Hi! ";
+  }
+  /* string 2, char 41 */
+  69.1526919682%, 69.4606063548% {
+    content: "Hi!";
+  }
+  /* string 2, char 42 */
+  69.4616063548%, 69.7695207414% {
+    content: "Hi";
+  }
+  /* string 2, char 43 */
+  69.7705207414%, 70.078435128% {
+    content: "H";
+  }
+  /* string 2, char 44 */
+  70.079435128%, 74.4914977935% {
+    content: "​";
+  }
+  /* string 3, char 1 */
+  74.4924977935%, 74.8004121801% {
+    content: "L";
+  }
+  /* string 3, char 2 */
+  74.8014121801%, 75.1093265666% {
+    content: "Le";
+  }
+  /* string 3, char 3 */
+  75.1103265666%, 75.4182409532% {
+    content: "Let";
+  }
+  /* string 3, char 4 */
+  75.4192409532%, 75.7271553398% {
+    content: "Let'";
+  }
+  /* string 3, char 5 */
+  75.7281553398%, 76.0360697264% {
+    content: "Let's";
+  }
+  /* string 3, char 6 */
+  76.0370697264%, 76.344984113% {
+    content: "Let's ";
+  }
+  /* string 3, char 7 */
+  76.345984113%, 76.6538984996% {
+    content: "Let's t";
+  }
+  /* string 3, char 8 */
+  76.6548984996%, 76.9628128861% {
+    content: "Let's ta";
+  }
+  /* string 3, char 9 */
+  76.9638128861%, 77.2717272727% {
+    content: "Let's tal";
+  }
+  /* string 3, char 10 */
+  77.2727272727%, 77.5806416593% {
+    content: "Let's talk";
+  }
+  /* string 3, char 11 */
+  77.5816416593%, 77.8895560459% {
+    content: "Let's talk ";
+  }
+  /* string 3, char 12 */
+  77.8905560459%, 78.1984704325% {
+    content: "Let's talk a";
+  }
+  /* string 3, char 13 */
+  78.1994704325%, 78.5073848191% {
+    content: "Let's talk an";
+  }
+  /* string 3, char 14 */
+  78.5083848191%, 78.8162992056% {
+    content: "Let's talk and";
+  }
+  /* string 3, char 15 */
+  78.8172992056%, 79.1252135922% {
+    content: "Let's talk and ";
+  }
+  /* string 3, char 16 */
+  79.1262135922%, 79.4341279788% {
+    content: "Let's talk and b";
+  }
+  /* string 3, char 17 */
+  79.4351279788%, 79.7430423654% {
+    content: "Let's talk and be";
+  }
+  /* string 3, char 18 */
+  79.7440423654%, 80.051956752% {
+    content: "Let's talk and be ";
+  }
+  /* string 3, char 19 */
+  80.052956752%, 80.3608711386% {
+    content: "Let's talk and be f";
+  }
+  /* string 3, char 20 */
+  80.3618711386%, 80.6697855252% {
+    content: "Let's talk and be fr";
+  }
+  /* string 3, char 21 */
+  80.6707855252%, 80.9786999117% {
+    content: "Let's talk and be fri";
+  }
+  /* string 3, char 22 */
+  80.9796999117%, 81.2876142983% {
+    content: "Let's talk and be frie";
+  }
+  /* string 3, char 23 */
+  81.2886142983%, 81.5965286849% {
+    content: "Let's talk and be frien";
+  }
+  /* string 3, char 24 */
+  81.5975286849%, 81.9054430715% {
+    content: "Let's talk and be friend";
+  }
+  /* string 3, char 25 */
+  81.9064430715%, 82.2143574581% {
+    content: "Let's talk and be friends";
+  }
+  /* string 3, char 26 */
+  82.2153574581%, 82.5232718447% {
+    content: "Let's talk and be friends ";
+  }
+  /* string 3, char 27 */
+  82.5242718447%, 87.5541632833% {
+    content: "Let's talk and be friends ♡";
+  }
+  /* string 3, char 28 */
+  87.5551632833%, 87.8630776699% {
+    content: "Let's talk and be friends ";
+  }
+  /* string 3, char 29 */
+  87.8640776699%, 88.1719920565% {
+    content: "Let's talk and be friends";
+  }
+  /* string 3, char 30 */
+  88.1729920565%, 88.4809064431% {
+    content: "Let's talk and be friend";
+  }
+  /* string 3, char 31 */
+  88.4819064431%, 88.7898208297% {
+    content: "Let's talk and be frien";
+  }
+  /* string 3, char 32 */
+  88.7908208297%, 89.0987352162% {
+    content: "Let's talk and be frie";
+  }
+  /* string 3, char 33 */
+  89.0997352162%, 89.4076496028% {
+    content: "Let's talk and be fri";
+  }
+  /* string 3, char 34 */
+  89.4086496028%, 89.7165639894% {
+    content: "Let's talk and be fr";
+  }
+  /* string 3, char 35 */
+  89.7175639894%, 90.025478376% {
+    content: "Let's talk and be f";
+  }
+  /* string 3, char 36 */
+  90.026478376%, 90.3343927626% {
+    content: "Let's talk and be ";
+  }
+  /* string 3, char 37 */
+  90.3353927626%, 90.6433071492% {
+    content: "Let's talk and be";
+  }
+  /* string 3, char 38 */
+  90.6443071492%, 90.9522215357% {
+    content: "Let's talk and b";
+  }
+  /* string 3, char 39 */
+  90.9532215357%, 91.2611359223% {
+    content: "Let's talk and ";
+  }
+  /* string 3, char 40 */
+  91.2621359223%, 91.5700503089% {
+    content: "Let's talk and";
+  }
+  /* string 3, char 41 */
+  91.5710503089%, 91.8789646955% {
+    content: "Let's talk an";
+  }
+  /* string 3, char 42 */
+  91.8799646955%, 92.1878790821% {
+    content: "Let's talk a";
+  }
+  /* string 3, char 43 */
+  92.1888790821%, 92.4967934687% {
+    content: "Let's talk ";
+  }
+  /* string 3, char 44 */
+  92.4977934687%, 92.8057078553% {
+    content: "Let's talk";
+  }
+  /* string 3, char 45 */
+  92.8067078553%, 93.1146222418% {
+    content: "Let's tal";
+  }
+  /* string 3, char 46 */
+  93.1156222418%, 93.4235366284% {
+    content: "Let's ta";
+  }
+  /* string 3, char 47 */
+  93.4245366284%, 93.732451015% {
+    content: "Let's t";
+  }
+  /* string 3, char 48 */
+  93.733451015%, 94.0413654016% {
+    content: "Let's ";
+  }
+  /* string 3, char 49 */
+  94.0423654016%, 94.3502797882% {
+    content: "Let's";
+  }
+  /* string 3, char 50 */
+  94.3512797882%, 94.6591941748% {
+    content: "Let'";
+  }
+  /* string 3, char 51 */
+  94.6601941748%, 94.9681085613% {
+    content: "Let";
+  }
+  /* string 3, char 52 */
+  94.9691085613%, 95.2770229479% {
+    content: "Le";
+  }
+  /* string 3, char 53 */
+  95.2780229479%, 95.5859373345% {
+    content: "L";
+  }
+  /* string 3, char 54 */
+  95.5869373345%, 100% {
+    content: "​";
+  }
+}
+@keyframes typed {
+  /* string 1, char 1 */
+  0%, 0.3079143866% {
+    content: '"';
+  }
+  /* string 1, char 2 */
+  0.3089143866%, 0.6168287732% {
+    content: '"S';
+  }
+  /* string 1, char 3 */
+  0.6178287732%, 0.9257431598% {
+    content: '"So';
+  }
+  /* string 1, char 4 */
+  0.9267431598%, 1.2346575463% {
+    content: '"Som';
+  }
+  /* string 1, char 5 */
+  1.2356575463%, 1.5435719329% {
+    content: '"Some';
+  }
+  /* string 1, char 6 */
+  1.5445719329%, 1.8524863195% {
+    content: '"Somew';
+  }
+  /* string 1, char 7 */
+  1.8534863195%, 2.1614007061% {
+    content: '"Somewh';
+  }
+  /* string 1, char 8 */
+  2.1624007061%, 2.4703150927% {
+    content: '"Somewhe';
+  }
+  /* string 1, char 9 */
+  2.4713150927%, 2.7792294793% {
+    content: '"Somewher';
+  }
+  /* string 1, char 10 */
+  2.7802294793%, 3.0881438658% {
+    content: '"Somewhere';
+  }
+  /* string 1, char 11 */
+  3.0891438658%, 3.3970582524% {
+    content: '"Somewhere,';
+  }
+  /* string 1, char 12 */
+  3.3980582524%, 3.705972639% {
+    content: '"Somewhere, ';
+  }
+  /* string 1, char 13 */
+  3.706972639%, 4.0148870256% {
+    content: '"Somewhere, s';
+  }
+  /* string 1, char 14 */
+  4.0158870256%, 4.3238014122% {
+    content: '"Somewhere, so';
+  }
+  /* string 1, char 15 */
+  4.3248014122%, 4.6327157988% {
+    content: '"Somewhere, som';
+  }
+  /* string 1, char 16 */
+  4.6337157988%, 4.9416301853% {
+    content: '"Somewhere, some';
+  }
+  /* string 1, char 17 */
+  4.9426301853%, 5.2505445719% {
+    content: '"Somewhere, somet';
+  }
+  /* string 1, char 18 */
+  5.2515445719%, 5.5594589585% {
+    content: '"Somewhere, someth';
+  }
+  /* string 1, char 19 */
+  5.5604589585%, 5.8683733451% {
+    content: '"Somewhere, somethi';
+  }
+  /* string 1, char 20 */
+  5.8693733451%, 6.1772877317% {
+    content: '"Somewhere, somethin';
+  }
+  /* string 1, char 21 */
+  6.1782877317%, 6.4862021183% {
+    content: '"Somewhere, something';
+  }
+  /* string 1, char 22 */
+  6.4872021183%, 6.7951165049% {
+    content: '"Somewhere, something ';
+  }
+  /* string 1, char 23 */
+  6.7961165049%, 7.1040308914% {
+    content: '"Somewhere, something i';
+  }
+  /* string 1, char 24 */
+  7.1050308914%, 7.412945278% {
+    content: '"Somewhere, something in';
+  }
+  /* string 1, char 25 */
+  7.413945278%, 7.7218596646% {
+    content: '"Somewhere, something inc';
+  }
+  /* string 1, char 26 */
+  7.7228596646%, 8.0307740512% {
+    content: '"Somewhere, something incr';
+  }
+  /* string 1, char 27 */
+  8.0317740512%, 8.3396884378% {
+    content: '"Somewhere, something incre';
+  }
+  /* string 1, char 28 */
+  8.3406884378%, 8.6486028244% {
+    content: '"Somewhere, something incred';
+  }
+  /* string 1, char 29 */
+  8.6496028244%, 8.9575172109% {
+    content: '"Somewhere, something incredi';
+  }
+  /* string 1, char 30 */
+  8.9585172109%, 9.2664315975% {
+    content: '"Somewhere, something incredib';
+  }
+  /* string 1, char 31 */
+  9.2674315975%, 9.5753459841% {
+    content: '"Somewhere, something incredibl';
+  }
+  /* string 1, char 32 */
+  9.5763459841%, 9.8842603707% {
+    content: '"Somewhere, something incredible';
+  }
+  /* string 1, char 33 */
+  9.8852603707%, 10.1931747573% {
+    content: '"Somewhere, something incredible ';
+  }
+  /* string 1, char 34 */
+  10.1941747573%, 10.5020891439% {
+    content: '"Somewhere, something incredible i';
+  }
+  /* string 1, char 35 */
+  10.5030891439%, 10.8110035305% {
+    content: '"Somewhere, something incredible is';
+  }
+  /* string 1, char 36 */
+  10.8120035305%, 11.119917917% {
+    content: '"Somewhere, something incredible is ';
+  }
+  /* string 1, char 37 */
+  11.120917917%, 11.4288323036% {
+    content: '"Somewhere, something incredible is w';
+  }
+  /* string 1, char 38 */
+  11.4298323036%, 11.7377466902% {
+    content: '"Somewhere, something incredible is wa';
+  }
+  /* string 1, char 39 */
+  11.7387466902%, 12.0466610768% {
+    content: '"Somewhere, something incredible is wai';
+  }
+  /* string 1, char 40 */
+  12.0476610768%, 12.3555754634% {
+    content: '"Somewhere, something incredible is wait';
+  }
+  /* string 1, char 41 */
+  12.3565754634%, 12.66448985% {
+    content: '"Somewhere, something incredible is waiti';
+  }
+  /* string 1, char 42 */
+  12.66548985%, 12.9734042365% {
+    content: '"Somewhere, something incredible is waitin';
+  }
+  /* string 1, char 43 */
+  12.9744042365%, 13.2823186231% {
+    content: '"Somewhere, something incredible is waiting';
+  }
+  /* string 1, char 44 */
+  13.2833186231%, 13.5912330097% {
+    content: '"Somewhere, something incredible is waiting ';
+  }
+  /* string 1, char 45 */
+  13.5922330097%, 13.9001473963% {
+    content: '"Somewhere, something incredible is waiting t';
+  }
+  /* string 1, char 46 */
+  13.9011473963%, 14.2090617829% {
+    content: '"Somewhere, something incredible is waiting to';
+  }
+  /* string 1, char 47 */
+  14.2100617829%, 14.5179761695% {
+    content: '"Somewhere, something incredible is waiting to ';
+  }
+  /* string 1, char 48 */
+  14.5189761695%, 14.826890556% {
+    content: '"Somewhere, something incredible is waiting to b';
+  }
+  /* string 1, char 49 */
+  14.827890556%, 15.1358049426% {
+    content: '"Somewhere, something incredible is waiting to be';
+  }
+  /* string 1, char 50 */
+  15.1368049426%, 15.4447193292% {
+    content: '"Somewhere, something incredible is waiting to be ';
+  }
+  /* string 1, char 51 */
+  15.4457193292%, 15.7536337158% {
+    content: '"Somewhere, something incredible is waiting to be k';
+  }
+  /* string 1, char 52 */
+  15.7546337158%, 16.0625481024% {
+    content: '"Somewhere, something incredible is waiting to be kn';
+  }
+  /* string 1, char 53 */
+  16.0635481024%, 16.371462489% {
+    content: '"Somewhere, something incredible is waiting to be kno';
+  }
+  /* string 1, char 54 */
+  16.372462489%, 16.6803768756% {
+    content: '"Somewhere, something incredible is waiting to be know';
+  }
+  /* string 1, char 55 */
+  16.6813768756%, 16.9892912621% {
+    content: '"Somewhere, something incredible is waiting to be known';
+  }
+  /* string 1, char 56 */
+  16.9902912621%, 17.2982056487% {
+    content: '"Somewhere, something incredible is waiting to be known.';
+  }
+  /* string 1, char 57 */
+  17.2992056487%, 17.6071200353% {
+    content: '"Somewhere, something incredible is waiting to be known."';
+  }
+  /* string 1, char 58 */
+  17.6081200353%, 17.9160344219% {
+    content: '"Somewhere, something incredible is waiting to be known." ';
+  }
+  /* string 1, char 59 */
+  17.9170344219%, 18.2249488085% {
+    content: '"Somewhere, something incredible is waiting to be known." -';
+  }
+  /* string 1, char 60 */
+  18.2259488085%, 18.5338631951% {
+    content: '"Somewhere, something incredible is waiting to be known." - ';
+  }
+  /* string 1, char 61 */
+  18.5348631951%, 18.8427775816% {
+    content: '"Somewhere, something incredible is waiting to be known." - C';
+  }
+  /* string 1, char 62 */
+  18.8437775816%, 19.1516919682% {
+    content: '"Somewhere, something incredible is waiting to be known." - Ca';
+  }
+  /* string 1, char 63 */
+  19.1526919682%, 19.4606063548% {
+    content: '"Somewhere, something incredible is waiting to be known." - Car';
+  }
+  /* string 1, char 64 */
+  19.4616063548%, 19.7695207414% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl';
+  }
+  /* string 1, char 65 */
+  19.7705207414%, 20.078435128% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl ';
+  }
+  /* string 1, char 66 */
+  20.079435128%, 20.3873495146% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl S';
+  }
+  /* string 1, char 67 */
+  20.3883495146%, 20.6962639011% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sa';
+  }
+  /* string 1, char 68 */
+  20.6972639011%, 21.0051782877% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sag';
+  }
+  /* string 1, char 69 */
+  21.0061782877%, 21.3140926743% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Saga';
+  }
+  /* string 1, char 70 */
+  21.3150926743%, 26.344984113% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sagan';
+  }
+  /* string 1, char 71 */
+  26.345984113%, 26.6538984996% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Saga';
+  }
+  /* string 1, char 72 */
+  26.6548984996%, 26.9628128861% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sag';
+  }
+  /* string 1, char 73 */
+  26.9638128861%, 27.2717272727% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl Sa';
+  }
+  /* string 1, char 74 */
+  27.2727272727%, 27.5806416593% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl S';
+  }
+  /* string 1, char 75 */
+  27.5816416593%, 27.8895560459% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl ';
+  }
+  /* string 1, char 76 */
+  27.8905560459%, 28.1984704325% {
+    content: '"Somewhere, something incredible is waiting to be known." - Carl';
+  }
+  /* string 1, char 77 */
+  28.1994704325%, 28.5073848191% {
+    content: '"Somewhere, something incredible is waiting to be known." - Car';
+  }
+  /* string 1, char 78 */
+  28.5083848191%, 28.8162992056% {
+    content: '"Somewhere, something incredible is waiting to be known." - Ca';
+  }
+  /* string 1, char 79 */
+  28.8172992056%, 29.1252135922% {
+    content: '"Somewhere, something incredible is waiting to be known." - C';
+  }
+  /* string 1, char 80 */
+  29.1262135922%, 29.4341279788% {
+    content: '"Somewhere, something incredible is waiting to be known." - ';
+  }
+  /* string 1, char 81 */
+  29.4351279788%, 29.7430423654% {
+    content: '"Somewhere, something incredible is waiting to be known." -';
+  }
+  /* string 1, char 82 */
+  29.7440423654%, 30.051956752% {
+    content: '"Somewhere, something incredible is waiting to be known." ';
+  }
+  /* string 1, char 83 */
+  30.052956752%, 30.3608711386% {
+    content: '"Somewhere, something incredible is waiting to be known."';
+  }
+  /* string 1, char 84 */
+  30.3618711386%, 30.6697855252% {
+    content: '"Somewhere, something incredible is waiting to be known.';
+  }
+  /* string 1, char 85 */
+  30.6707855252%, 30.9786999117% {
+    content: '"Somewhere, something incredible is waiting to be known';
+  }
+  /* string 1, char 86 */
+  30.9796999117%, 31.2876142983% {
+    content: '"Somewhere, something incredible is waiting to be know';
+  }
+  /* string 1, char 87 */
+  31.2886142983%, 31.5965286849% {
+    content: '"Somewhere, something incredible is waiting to be kno';
+  }
+  /* string 1, char 88 */
+  31.5975286849%, 31.9054430715% {
+    content: '"Somewhere, something incredible is waiting to be kn';
+  }
+  /* string 1, char 89 */
+  31.9064430715%, 32.2143574581% {
+    content: '"Somewhere, something incredible is waiting to be k';
+  }
+  /* string 1, char 90 */
+  32.2153574581%, 32.5232718447% {
+    content: '"Somewhere, something incredible is waiting to be ';
+  }
+  /* string 1, char 91 */
+  32.5242718447%, 32.8321862312% {
+    content: '"Somewhere, something incredible is waiting to be';
+  }
+  /* string 1, char 92 */
+  32.8331862312%, 33.1411006178% {
+    content: '"Somewhere, something incredible is waiting to b';
+  }
+  /* string 1, char 93 */
+  33.1421006178%, 33.4500150044% {
+    content: '"Somewhere, something incredible is waiting to ';
+  }
+  /* string 1, char 94 */
+  33.4510150044%, 33.758929391% {
+    content: '"Somewhere, something incredible is waiting to';
+  }
+  /* string 1, char 95 */
+  33.759929391%, 34.0678437776% {
+    content: '"Somewhere, something incredible is waiting t';
+  }
+  /* string 1, char 96 */
+  34.0688437776%, 34.3767581642% {
+    content: '"Somewhere, something incredible is waiting ';
+  }
+  /* string 1, char 97 */
+  34.3777581642%, 34.6856725508% {
+    content: '"Somewhere, something incredible is waiting';
+  }
+  /* string 1, char 98 */
+  34.6866725508%, 34.9945869373% {
+    content: '"Somewhere, something incredible is waitin';
+  }
+  /* string 1, char 99 */
+  34.9955869373%, 35.3035013239% {
+    content: '"Somewhere, something incredible is waiti';
+  }
+  /* string 1, char 100 */
+  35.3045013239%, 35.6124157105% {
+    content: '"Somewhere, something incredible is wait';
+  }
+  /* string 1, char 101 */
+  35.6134157105%, 35.9213300971% {
+    content: '"Somewhere, something incredible is wai';
+  }
+  /* string 1, char 102 */
+  35.9223300971%, 36.2302444837% {
+    content: '"Somewhere, something incredible is wa';
+  }
+  /* string 1, char 103 */
+  36.2312444837%, 36.5391588703% {
+    content: '"Somewhere, something incredible is w';
+  }
+  /* string 1, char 104 */
+  36.5401588703%, 36.8480732568% {
+    content: '"Somewhere, something incredible is ';
+  }
+  /* string 1, char 105 */
+  36.8490732568%, 37.1569876434% {
+    content: '"Somewhere, something incredible is';
+  }
+  /* string 1, char 106 */
+  37.1579876434%, 37.46590203% {
+    content: '"Somewhere, something incredible i';
+  }
+  /* string 1, char 107 */
+  37.46690203%, 37.7748164166% {
+    content: '"Somewhere, something incredible ';
+  }
+  /* string 1, char 108 */
+  37.7758164166%, 38.0837308032% {
+    content: '"Somewhere, something incredible';
+  }
+  /* string 1, char 109 */
+  38.0847308032%, 38.3926451898% {
+    content: '"Somewhere, something incredibl';
+  }
+  /* string 1, char 110 */
+  38.3936451898%, 38.7015595763% {
+    content: '"Somewhere, something incredib';
+  }
+  /* string 1, char 111 */
+  38.7025595763%, 39.0104739629% {
+    content: '"Somewhere, something incredi';
+  }
+  /* string 1, char 112 */
+  39.0114739629%, 39.3193883495% {
+    content: '"Somewhere, something incred';
+  }
+  /* string 1, char 113 */
+  39.3203883495%, 39.6283027361% {
+    content: '"Somewhere, something incre';
+  }
+  /* string 1, char 114 */
+  39.6293027361%, 39.9372171227% {
+    content: '"Somewhere, something incr';
+  }
+  /* string 1, char 115 */
+  39.9382171227%, 40.2461315093% {
+    content: '"Somewhere, something inc';
+  }
+  /* string 1, char 116 */
+  40.2471315093%, 40.5550458959% {
+    content: '"Somewhere, something in';
+  }
+  /* string 1, char 117 */
+  40.5560458959%, 40.8639602824% {
+    content: '"Somewhere, something i';
+  }
+  /* string 1, char 118 */
+  40.8649602824%, 41.172874669% {
+    content: '"Somewhere, something ';
+  }
+  /* string 1, char 119 */
+  41.173874669%, 41.4817890556% {
+    content: '"Somewhere, something';
+  }
+  /* string 1, char 120 */
+  41.4827890556%, 41.7907034422% {
+    content: '"Somewhere, somethin';
+  }
+  /* string 1, char 121 */
+  41.7917034422%, 42.0996178288% {
+    content: '"Somewhere, somethi';
+  }
+  /* string 1, char 122 */
+  42.1006178288%, 42.4085322154% {
+    content: '"Somewhere, someth';
+  }
+  /* string 1, char 123 */
+  42.4095322154%, 42.7174466019% {
+    content: '"Somewhere, somet';
+  }
+  /* string 1, char 124 */
+  42.7184466019%, 43.0263609885% {
+    content: '"Somewhere, some';
+  }
+  /* string 1, char 125 */
+  43.0273609885%, 43.3352753751% {
+    content: '"Somewhere, som';
+  }
+  /* string 1, char 126 */
+  43.3362753751%, 43.6441897617% {
+    content: '"Somewhere, so';
+  }
+  /* string 1, char 127 */
+  43.6451897617%, 43.9531041483% {
+    content: '"Somewhere, s';
+  }
+  /* string 1, char 128 */
+  43.9541041483%, 44.2620185349% {
+    content: '"Somewhere, ';
+  }
+  /* string 1, char 129 */
+  44.2630185349%, 44.5709329214% {
+    content: '"Somewhere,';
+  }
+  /* string 1, char 130 */
+  44.5719329214%, 44.879847308% {
+    content: '"Somewhere';
+  }
+  /* string 1, char 131 */
+  44.880847308%, 45.1887616946% {
+    content: '"Somewher';
+  }
+  /* string 1, char 132 */
+  45.1897616946%, 45.4976760812% {
+    content: '"Somewhe';
+  }
+  /* string 1, char 133 */
+  45.4986760812%, 45.8065904678% {
+    content: '"Somewh';
+  }
+  /* string 1, char 134 */
+  45.8075904678%, 46.1155048544% {
+    content: '"Somew';
+  }
+  /* string 1, char 135 */
+  46.1165048544%, 46.424419241% {
+    content: '"Some';
+  }
+  /* string 1, char 136 */
+  46.425419241%, 46.7333336275% {
+    content: '"Som';
+  }
+  /* string 1, char 137 */
+  46.7343336275%, 47.0422480141% {
+    content: '"So';
+  }
+  /* string 1, char 138 */
+  47.0432480141%, 47.3511624007% {
+    content: '"S';
+  }
+  /* string 1, char 139 */
+  47.3521624007%, 47.6600767873% {
+    content: '"';
+  }
+  /* string 1, char 140 */
+  47.6610767873%, 52.0731394528% {
+    content: "​";
+  }
+  /* string 2, char 1 */
+  52.0741394528%, 52.3820538394% {
+    content: "H";
+  }
+  /* string 2, char 2 */
+  52.3830538394%, 52.6909682259% {
+    content: "Hi";
+  }
+  /* string 2, char 3 */
+  52.6919682259%, 52.9998826125% {
+    content: "Hi!";
+  }
+  /* string 2, char 4 */
+  53.0008826125%, 53.3087969991% {
+    content: "Hi! ";
+  }
+  /* string 2, char 5 */
+  53.3097969991%, 53.6177113857% {
+    content: "Hi! I";
+  }
+  /* string 2, char 6 */
+  53.6187113857%, 53.9266257723% {
+    content: "Hi! I ";
+  }
+  /* string 2, char 7 */
+  53.9276257723%, 54.2355401589% {
+    content: "Hi! I a";
+  }
+  /* string 2, char 8 */
+  54.2365401589%, 54.5444545455% {
+    content: "Hi! I am";
+  }
+  /* string 2, char 9 */
+  54.5454545455%, 54.853368932% {
+    content: "Hi! I am ";
+  }
+  /* string 2, char 10 */
+  54.854368932%, 55.1622833186% {
+    content: "Hi! I am A";
+  }
+  /* string 2, char 11 */
+  55.1632833186%, 55.4711977052% {
+    content: "Hi! I am At";
+  }
+  /* string 2, char 12 */
+  55.4721977052%, 55.7801120918% {
+    content: "Hi! I am Ata";
+  }
+  /* string 2, char 13 */
+  55.7811120918%, 56.0890264784% {
+    content: "Hi! I am Atan";
+  }
+  /* string 2, char 14 */
+  56.0900264784%, 56.397940865% {
+    content: "Hi! I am Atan ";
+  }
+  /* string 2, char 15 */
+  56.398940865%, 56.7068552515% {
+    content: "Hi! I am Atan B";
+  }
+  /* string 2, char 16 */
+  56.7078552515%, 57.0157696381% {
+    content: "Hi! I am Atan Bh";
+  }
+  /* string 2, char 17 */
+  57.0167696381%, 57.3246840247% {
+    content: "Hi! I am Atan Bha";
+  }
+  /* string 2, char 18 */
+  57.3256840247%, 57.6335984113% {
+    content: "Hi! I am Atan Bhar";
+  }
+  /* string 2, char 19 */
+  57.6345984113%, 57.9425127979% {
+    content: "Hi! I am Atan Bhard";
+  }
+  /* string 2, char 20 */
+  57.9435127979%, 58.2514271845% {
+    content: "Hi! I am Atan Bhardw";
+  }
+  /* string 2, char 21 */
+  58.2524271845%, 58.5603415711% {
+    content: "Hi! I am Atan Bhardwa";
+  }
+  /* string 2, char 22 */
+  58.5613415711%, 63.5912330097% {
+    content: "Hi! I am Atan Bhardwaj";
+  }
+  /* string 2, char 23 */
+  63.5922330097%, 63.9001473963% {
+    content: "Hi! I am Atan Bhardwa";
+  }
+  /* string 2, char 24 */
+  63.9011473963%, 64.2090617829% {
+    content: "Hi! I am Atan Bhardw";
+  }
+  /* string 2, char 25 */
+  64.2100617829%, 64.5179761695% {
+    content: "Hi! I am Atan Bhard";
+  }
+  /* string 2, char 26 */
+  64.5189761695%, 64.826890556% {
+    content: "Hi! I am Atan Bhar";
+  }
+  /* string 2, char 27 */
+  64.827890556%, 65.1358049426% {
+    content: "Hi! I am Atan Bha";
+  }
+  /* string 2, char 28 */
+  65.1368049426%, 65.4447193292% {
+    content: "Hi! I am Atan Bh";
+  }
+  /* string 2, char 29 */
+  65.4457193292%, 65.7536337158% {
+    content: "Hi! I am Atan B";
+  }
+  /* string 2, char 30 */
+  65.7546337158%, 66.0625481024% {
+    content: "Hi! I am Atan ";
+  }
+  /* string 2, char 31 */
+  66.0635481024%, 66.371462489% {
+    content: "Hi! I am Atan";
+  }
+  /* string 2, char 32 */
+  66.372462489%, 66.6803768756% {
+    content: "Hi! I am Ata";
+  }
+  /* string 2, char 33 */
+  66.6813768756%, 66.9892912621% {
+    content: "Hi! I am At";
+  }
+  /* string 2, char 34 */
+  66.9902912621%, 67.2982056487% {
+    content: "Hi! I am A";
+  }
+  /* string 2, char 35 */
+  67.2992056487%, 67.6071200353% {
+    content: "Hi! I am ";
+  }
+  /* string 2, char 36 */
+  67.6081200353%, 67.9160344219% {
+    content: "Hi! I am";
+  }
+  /* string 2, char 37 */
+  67.9170344219%, 68.2249488085% {
+    content: "Hi! I a";
+  }
+  /* string 2, char 38 */
+  68.2259488085%, 68.5338631951% {
+    content: "Hi! I ";
+  }
+  /* string 2, char 39 */
+  68.5348631951%, 68.8427775816% {
+    content: "Hi! I";
+  }
+  /* string 2, char 40 */
+  68.8437775816%, 69.1516919682% {
+    content: "Hi! ";
+  }
+  /* string 2, char 41 */
+  69.1526919682%, 69.4606063548% {
+    content: "Hi!";
+  }
+  /* string 2, char 42 */
+  69.4616063548%, 69.7695207414% {
+    content: "Hi";
+  }
+  /* string 2, char 43 */
+  69.7705207414%, 70.078435128% {
+    content: "H";
+  }
+  /* string 2, char 44 */
+  70.079435128%, 74.4914977935% {
+    content: "​";
+  }
+  /* string 3, char 1 */
+  74.4924977935%, 74.8004121801% {
+    content: "L";
+  }
+  /* string 3, char 2 */
+  74.8014121801%, 75.1093265666% {
+    content: "Le";
+  }
+  /* string 3, char 3 */
+  75.1103265666%, 75.4182409532% {
+    content: "Let";
+  }
+  /* string 3, char 4 */
+  75.4192409532%, 75.7271553398% {
+    content: "Let'";
+  }
+  /* string 3, char 5 */
+  75.7281553398%, 76.0360697264% {
+    content: "Let's";
+  }
+  /* string 3, char 6 */
+  76.0370697264%, 76.344984113% {
+    content: "Let's ";
+  }
+  /* string 3, char 7 */
+  76.345984113%, 76.6538984996% {
+    content: "Let's t";
+  }
+  /* string 3, char 8 */
+  76.6548984996%, 76.9628128861% {
+    content: "Let's ta";
+  }
+  /* string 3, char 9 */
+  76.9638128861%, 77.2717272727% {
+    content: "Let's tal";
+  }
+  /* string 3, char 10 */
+  77.2727272727%, 77.5806416593% {
+    content: "Let's talk";
+  }
+  /* string 3, char 11 */
+  77.5816416593%, 77.8895560459% {
+    content: "Let's talk ";
+  }
+  /* string 3, char 12 */
+  77.8905560459%, 78.1984704325% {
+    content: "Let's talk a";
+  }
+  /* string 3, char 13 */
+  78.1994704325%, 78.5073848191% {
+    content: "Let's talk an";
+  }
+  /* string 3, char 14 */
+  78.5083848191%, 78.8162992056% {
+    content: "Let's talk and";
+  }
+  /* string 3, char 15 */
+  78.8172992056%, 79.1252135922% {
+    content: "Let's talk and ";
+  }
+  /* string 3, char 16 */
+  79.1262135922%, 79.4341279788% {
+    content: "Let's talk and b";
+  }
+  /* string 3, char 17 */
+  79.4351279788%, 79.7430423654% {
+    content: "Let's talk and be";
+  }
+  /* string 3, char 18 */
+  79.7440423654%, 80.051956752% {
+    content: "Let's talk and be ";
+  }
+  /* string 3, char 19 */
+  80.052956752%, 80.3608711386% {
+    content: "Let's talk and be f";
+  }
+  /* string 3, char 20 */
+  80.3618711386%, 80.6697855252% {
+    content: "Let's talk and be fr";
+  }
+  /* string 3, char 21 */
+  80.6707855252%, 80.9786999117% {
+    content: "Let's talk and be fri";
+  }
+  /* string 3, char 22 */
+  80.9796999117%, 81.2876142983% {
+    content: "Let's talk and be frie";
+  }
+  /* string 3, char 23 */
+  81.2886142983%, 81.5965286849% {
+    content: "Let's talk and be frien";
+  }
+  /* string 3, char 24 */
+  81.5975286849%, 81.9054430715% {
+    content: "Let's talk and be friend";
+  }
+  /* string 3, char 25 */
+  81.9064430715%, 82.2143574581% {
+    content: "Let's talk and be friends";
+  }
+  /* string 3, char 26 */
+  82.2153574581%, 82.5232718447% {
+    content: "Let's talk and be friends ";
+  }
+  /* string 3, char 27 */
+  82.5242718447%, 87.5541632833% {
+    content: "Let's talk and be friends ♡";
+  }
+  /* string 3, char 28 */
+  87.5551632833%, 87.8630776699% {
+    content: "Let's talk and be friends ";
+  }
+  /* string 3, char 29 */
+  87.8640776699%, 88.1719920565% {
+    content: "Let's talk and be friends";
+  }
+  /* string 3, char 30 */
+  88.1729920565%, 88.4809064431% {
+    content: "Let's talk and be friend";
+  }
+  /* string 3, char 31 */
+  88.4819064431%, 88.7898208297% {
+    content: "Let's talk and be frien";
+  }
+  /* string 3, char 32 */
+  88.7908208297%, 89.0987352162% {
+    content: "Let's talk and be frie";
+  }
+  /* string 3, char 33 */
+  89.0997352162%, 89.4076496028% {
+    content: "Let's talk and be fri";
+  }
+  /* string 3, char 34 */
+  89.4086496028%, 89.7165639894% {
+    content: "Let's talk and be fr";
+  }
+  /* string 3, char 35 */
+  89.7175639894%, 90.025478376% {
+    content: "Let's talk and be f";
+  }
+  /* string 3, char 36 */
+  90.026478376%, 90.3343927626% {
+    content: "Let's talk and be ";
+  }
+  /* string 3, char 37 */
+  90.3353927626%, 90.6433071492% {
+    content: "Let's talk and be";
+  }
+  /* string 3, char 38 */
+  90.6443071492%, 90.9522215357% {
+    content: "Let's talk and b";
+  }
+  /* string 3, char 39 */
+  90.9532215357%, 91.2611359223% {
+    content: "Let's talk and ";
+  }
+  /* string 3, char 40 */
+  91.2621359223%, 91.5700503089% {
+    content: "Let's talk and";
+  }
+  /* string 3, char 41 */
+  91.5710503089%, 91.8789646955% {
+    content: "Let's talk an";
+  }
+  /* string 3, char 42 */
+  91.8799646955%, 92.1878790821% {
+    content: "Let's talk a";
+  }
+  /* string 3, char 43 */
+  92.1888790821%, 92.4967934687% {
+    content: "Let's talk ";
+  }
+  /* string 3, char 44 */
+  92.4977934687%, 92.8057078553% {
+    content: "Let's talk";
+  }
+  /* string 3, char 45 */
+  92.8067078553%, 93.1146222418% {
+    content: "Let's tal";
+  }
+  /* string 3, char 46 */
+  93.1156222418%, 93.4235366284% {
+    content: "Let's ta";
+  }
+  /* string 3, char 47 */
+  93.4245366284%, 93.732451015% {
+    content: "Let's t";
+  }
+  /* string 3, char 48 */
+  93.733451015%, 94.0413654016% {
+    content: "Let's ";
+  }
+  /* string 3, char 49 */
+  94.0423654016%, 94.3502797882% {
+    content: "Let's";
+  }
+  /* string 3, char 50 */
+  94.3512797882%, 94.6591941748% {
+    content: "Let'";
+  }
+  /* string 3, char 51 */
+  94.6601941748%, 94.9681085613% {
+    content: "Let";
+  }
+  /* string 3, char 52 */
+  94.9691085613%, 95.2770229479% {
+    content: "Le";
+  }
+  /* string 3, char 53 */
+  95.2780229479%, 95.5859373345% {
+    content: "L";
+  }
+  /* string 3, char 54 */
+  95.5869373345%, 100% {
+    content: "​";
+  }
+}
+@-webkit-keyframes beam-blink {
+  75% {
+    border-color: transparent;
+  }
+}
+@keyframes beam-blink {
+  75% {
+    border-color: transparent;
+  }
+}
+* {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+/* html, body{
+    height: 100%;
+  }
+   */
+  #quote {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    margin-top: 10vh;
+    font-size: calc(2px + 2vw);
+    font-family:"VT323", monospace, sans-serif;
+    color:  #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  #quote::after {
+    content: "​";
+    position: relative;
+    top: -13px;
+    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 3px;
+    padding-right: calc(3px + 0.1vw);
+    border-right: 10px solid white;
+    border-right: calc(1.1vw + 4px) solid white;
+    /* text-shadow: 0 0 5px rgba(51, 255, 51, 0.75); */
+    /* white-space: nowrap; */
+    -webkit-animation: typed 34.81s linear 1s infinite, beam-blink 1s infinite;
+            animation: typed 34.81s linear 1s infinite, beam-blink 1s infinite;
+  }
+  @media (max-width: 575px) {
+    #quote::after {
+      top: -33px;
+    }
+  }
+  
+
+  nav ul li {
+    animation-name: nav-link-load;
+    animation-duration: var(--nav-link-load-time);
+    animation-timing-function: ease-out;
+    animation-delay: var(--nav-load-time);
+    animation-fill-mode: forwards;
+    transform: scale(0);
+  }
+
+  @keyframes nav-load{
+    0%{
+      transform: translateY(-100%);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+
+
+  @keyframes nav-link-load{
+    0%{
+      transform: scale(0);
+    }
+    90%{
+      transform: scale(1.1);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+
+
+
+  .bg-box {
+    /* width: 100%;
+    min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-color: #000;
+}
+
+
+.share-btn {
+    padding: 25px;
+    background-color: #000;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.share-btn:hover {
+    transform: scale(1.1);
+}
+
+.text-share-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-family: 'VT323', sans-serif;
+    font-size: 24px;
+    transition: 1s 0.2s;
+    z-index: 99999;
+}
+
+.share-btn:hover .text-share-btn {
+    left: -100%;
+}
+
+.share-items {
+    display: flex;
+    list-style: none;
+  background-color: #000;
+    margin: 0;
+    font-size: 30px;
+    padding: 0;
+}
+
+.share-items li {
+    padding: 0 17px;
+    
+}
+
+.share-items li a{
+  position: relative;
+    color: #fff;
+    background-color: #000;
+    display: inline-block;
+    transform: scale(0);
+}
+
+.share-btn:hover ul li a {
+    transform: scale(1);
+}
+
+.share-items li:nth-child(5) a {
+    transition: 0.5s 0.3s;
+}
+
+.share-items li:nth-child(4) a {
+    transition: 0.5s 0.45s;
+}
+
+.share-items li:nth-child(3) a {
+    transition: 0.5s 0.6s;
+}
+
+.share-items li:nth-child(2) a {
+    transition: 0.5s 0.75s;
+}
+
+.share-items li:nth-child(1) a {
+    transition: 0.5s 0.9s;
+}
+
+.bg-box>p{
+  margin-top: 5px;
+  color: white;
+}
+
+.bg-box>span{
+  color:red;
+}
+
+.copyright{
+  color:red;
+  margin-right: 10px auto;
+  text-align: center;
+}
+
+.heart, .copyright{
+  font-family: 'VT323', sans-serif;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mySlides {
+            display: none;
+        }
+
+        .w3-left,
+        .w3-right,
+        .w3-badge {
+            cursor: pointer;
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0;
+        }
+
+        .w3-content,
+        .inlineblock {
+            display: inline-block;
+            margin: 10px;
+            overflow: auto;
+            background-color: green;
+        }
+
+        .w3-hover-text-khaki {
+            display: inline-block;
+            text-align: center;
+            justify-content: middle;
+        }
+
+        .w3-content {
+            border: 1px solid red;
+            background-color: aqua;
+        }
+
+        .new,
+        .inlineblock {
+            display: inline-block;
+            background-color: grey;
+        }
+
+        .w3-left {
+            margin-left: 221px;
+        }
+
+
+        #slideshow {
+            overflow: hidden;
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .slide-wrapper {
+            width: 2912px;
+            animation: slide 18s ease infinite;
+        }
+
+        .slide {
+            float: left;
+            height: 510px;
+            width: 728px;
+        }
+
+        .slide:nth-child(1) {
+            background: #D93B65;
+        }
+
+        .slide:nth-child(2) {
+            background: #037E8C;
+        }
+
+        .slide:nth-child(3) {
+            background: #36BF66;
+        }
+
+        .slide:nth-child(4) {
+            background: #D9D055;
+        }
+
+        .slide-number {
+            color: #000;
+            text-align: center;
+            font-size: 10em;
+        }
+
+        @keyframes slide {
+            20% {
+                margin-left: 0px;
+            }
+
+            30% {
+                margin-left: -728px;
+            }
+
+            50% {
+                margin-left: -728px;
+            }
+
+            60% {
+                margin-left: -1456px;
+            }
+
+            70% {
+                margin-left: -1456px;
+            }
+
+            80% {
+                margin-left: -2184px;
+            }
+
+            90% {
+                margin-left: -2184px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="me">This is me :) </h1>
+    <div class="new">
+        <div class="w3-content w3-display-container inlineblock">
+            <img class="mySlides" src="image1.jpg" width="500" height="500">
+            <img class="mySlides" src="image2.jpg" width="500" height="500">
+            <img class="mySlides" src="image3.jpg" width="500" height="500">
+            <!-- <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+            style="width:100%"> -->
+            <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+            <!-- <span class="w3-badge demo w3-border w3-transparent w3-hover-red" onclick="currentDiv(1)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+            <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span> -->
+        </div>
+    </div>
+    <h1 id="me">This is me :) </h1>
+    <div id="slideshow">
+        <div class="slide-wrapper">
+            <div class="slide">
+                <img class="slide-number" src="image4.jpg" width="500" height="500">
+            </div>
+            <div class="slide">
+                <img class="slide-number" src="image5.jpg" width="500" height="500">
+            </div>
+            <div class="slide">
+                <img class="slide-number" src="image6.jpg" width="500" height="500">
+            </div>
+        </div>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            // dots[slideIndex - 1].className += " w3-white";
+        }
+        function next() {
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function currentDiv(n) {
+                showDivs(slideIndex = n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides1");
+                var dots = document.getElementsByClassName("demo");
+                if (n > x.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = x.length }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" w3-white", "");
+                }
+                x[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " w3-white";
+            }
+        }
+    </script>
+</body>
+
+</html>
