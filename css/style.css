@@ -432,6 +432,10 @@ p{
   background: linear-gradient(#141e30, #243b55);
 } */
 
+/* .suggest{
+  color:green;
+} */
+
 .login-box {
   /* position: relative; */
   /* top: 50%;
@@ -758,9 +762,11 @@ video, .alien1, .alien2{
  */
  /* fields */
 
+
  .fieldsh1{
    color:red;
    text-align: center;
+   margin-top: 25vh;
  }
 
  .fieldsh2{
