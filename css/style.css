@@ -101,7 +101,7 @@ nav ul li:after {
     color: #fff;
     font-family: "VT323";
     text-decoration: none;
-    font-size: 25px;
+    font-size: 17px;
     z-index: 2;
     transition: 0.2s ease-in-out;
     cursor: pointer;
